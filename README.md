@@ -15,9 +15,11 @@
 * weighted statistics,
 * permutation tests.
 
+
 ## Documentation
 
 Please visit [https://nicolas-robette.github.io/descriptio/](https://nicolas-robette.github.io/descriptio/) for documentation
+
 
 ## Installation
 
@@ -30,6 +32,14 @@ if (!require(devtools)){
 }
 install_github("nicolas-robette/descriptio")
 ```
+
+
+## Citation
+
+To cite `descriptio` in publications, use :
+
+Robette N. (2023), *`descriptio` : Descriptive Analysis of Associations between two Variables in `R`*, version 1.1, https://nicolas-robette.github.io/descriptio/
+
 
 ## References
 

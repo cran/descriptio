@@ -4,7 +4,7 @@
 \title{Weighted correlation}
 
 \description{
-Computes the weighted correlation of a distribution. This can be Pearson, Spearman or Kendall correlation.
+Computes the weighted correlation between two distributions. This can be Pearson, Spearman or Kendall correlation.
 }
 \usage{
 weighted.cor(x, y, weights = NULL, method = "pearson", na.rm = FALSE)
@@ -24,7 +24,7 @@ a length-one numeric vector
 \author{Nicolas Robette}
 
 \seealso{
-\code{\link{weighted.sd}}
+\code{\link{weighted.sd}}, \code{\link{weighted.cor2}}
 }
 
 \examples{
