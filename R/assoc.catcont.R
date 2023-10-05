@@ -65,22 +65,20 @@ assoc.catcont <- function(x, y, weights = NULL,
     names(ppval) <- levels(x)
   }
   if(is.null(nperm)) ppval <- NULL
+  
+  a1 <- sapply(split(data.frame(y,weights), x), function(x) weighted.mean(x[,1],x[,2]))
+  a2 <- sapply(split(data.frame(y,weights), x), function(x) weighted.sd(x[,1],x[,2]))
+  a3 <- aggregate(y ~ x, FUN = min)$y
+  a4 <- t(sapply(split(data.frame(y,weights), x), function(x) weighted.quantile(x[,1],x[,2], probs = c(.25,.5,.75))))
+  a5 <- aggregate(y ~ x, FUN = max)$y
+  a6 <- sapply(split(data.frame(y,weights), x), function(x) weighted.mad(x[,1],x[,2]))
+  summ <- data.frame(a1,a2,a3,a4,a5,a6)
+  names(summ) <- c("mean", "sd", "min", "q1", "median", "q3", "max", "mad")
+  
+  tv <- test.values(x, y, weights)
+  tvpv <- 2*(1 -pnorm(abs(tv)))
 
   cor.coeff <- round(cor.coeff,digits)
-  return(list('eta.squared'=eta.squared, 'permutation.pvalue'=permutation.pvalue, 'cor'=cor.coeff, 'cor.perm.pval'=ppval))
+  return(list('summary'=summ, 'eta.squared'=eta.squared, 'permutation.pvalue'=permutation.pvalue,
+              'cor'=cor.coeff, 'cor.perm.pval'=ppval, 'test.values'=tv, 'test.values.pval'=tvpv))
 }
-
-# x0 <- x1 <- Movies$Country
-# y0 <- y1 <- Movies$BoxOffice
-# w0 <- w1 <- Movies$Critics
-# w1[c(1,3)] <- NA
-# x1[c(2,4)] <- NA
-# y1[c(5,6)] <- NA
-# assoc.catcont(x0, y = y0, weights = w0, na.rm.cat = FALSE, na.value.cat = "99")
-# assoc.catcont(x0, y0, weights = w0, na.rm.cat = TRUE, na.value.cat = "99")
-# assoc.catcont(x0, y0, weights = w1, na.rm.cat = FALSE, na.value.cat = "99")
-# assoc.catcont(x0, y0, weights = w1, na.rm.cat = TRUE, na.value.cat = "99")
-# assoc.catcont(x1, y0, weights = w0, na.rm.cat = FALSE, na.value.cat = "99")
-# assoc.catcont(x1, y0, weights = w0, na.rm.cat = TRUE, na.value.cat = "99")
-# assoc.catcont(x0, y1, weights = w0, na.rm.cont = FALSE)
-# assoc.catcont(x0, y1, weights = w0, na.rm.cont = TRUE)
