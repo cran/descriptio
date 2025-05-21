@@ -6,7 +6,7 @@
 Cross-tabulation and measures of association between two categorical variables
 }
 \usage{
-assoc.twocat(x, y, weights = NULL, na.rm = FALSE, na.value = "NA",
+assoc.twocat(x, y, weights = NULL, na.rm = FALSE, na.value = "NAs",
              nperm = NULL, distrib = "asympt")
 }
 
@@ -15,7 +15,7 @@ assoc.twocat(x, y, weights = NULL, na.rm = FALSE, na.value = "NA",
   \item{y}{the second categorical variable (must be a factor)}
   \item{weights}{numeric vector of weights. If NULL (default), uniform weights (i.e. all equal to 1) are used.}
   \item{na.rm}{logical, indicating whether NA values should be silently removed before the computation proceeds. If FALSE (default), an additional level is added to the variables (see na.value argument).}
-  \item{na.value}{character. Name of the level for NA category. Default is "NA". Only used if na.rm = FALSE.}  \item{nperm}{numeric. Number of permutations for the permutation test of independence. If NULL (default), no permutation test is performed.}
+  \item{na.value}{character. Name of the level for NA category. Default is "NAs". Only used if na.rm = FALSE.}  \item{nperm}{numeric. Number of permutations for the permutation test of independence. If NULL (default), no permutation test is performed.}
   \item{distrib}{the null distribution of permutation test of independence can be approximated by its asymptotic distribution (\code{asympt}, default) or via Monte Carlo resampling (\code{approx}).}
  
 }
@@ -37,7 +37,7 @@ A list of lists with the following elements :
 \item{GK.tau.xy}{Goodman and Kruskal tau (forward association, i.e. x is the predictor and y is the response)}
 \item{GK.tau.yx}{Goodman and Kruskal tau (backward association, i.e. y is the predictor and x is the respons)}
 \code{local} list :
-\item{std.residuals}{the table of standardized (i.e.Pearson) residuals.}
+\item{std.residuals}{the table of standardized (i.e. Pearson) residuals.}
 \item{adj.residuals}{the table of adjusted standardized residuals.}
 \item{adj.res.pval}{the table of p-values of adjusted standardized residuals.}
 \item{odds.ratios}{the table of odds ratios.}
@@ -58,6 +58,7 @@ Rakotomalala R., \emph{Comprendre la taille d'effet (effect size)}, http://eric.
 
 Lebart L., Morineau A. and Warwick K., 1984, *Multivariate Descriptive Statistical Analysis*, John Wiley and sons, New-York.
 }
+
 \author{Nicolas Robette}
 
 \seealso{
