@@ -1,4 +1,4 @@
-citHeader("To cite GDAtools in publications, use:")
+citHeader("To cite descriptio in publications, use:")
 
 bibentry(
   bibtype  = "manual",
@@ -6,12 +6,12 @@ bibentry(
   author   = "Nicolas Robette",
   year     = "2025",
   note     = "R package version 1.4",
-  url      = "https://nicolas-robette.github.io/descriptio/",
+  url      = "https://nicolas-robette.frama.io/descriptio/",
   
   textVersion = paste("Robette N. (2025).",
         "descriptio: Descriptive Analysis of Associations between Variables in R.",
-        "version 1.5.",
-        "https://nicolas-robette.github.io/descriptio/")
+        "version 1.4.",
+        "https://nicolas-robette.frama.io/descriptio/")
 )
 
 citFooter("See",sQuote("citation()"),"for citing R itself.")

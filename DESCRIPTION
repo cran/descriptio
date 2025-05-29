@@ -1,7 +1,7 @@
 Package: descriptio
 Type: Package
 Title: Descriptive Statistical Analysis
-Version: 1.4
+Version: 1.4.1
 Authors@R: c(person("Nicolas", "Robette", role = c("aut", "cre"), email = "nicolas.robette@uvsq.fr"))
 Depends: R (>= 4.1.0)
 Imports: MASS, ggplot2, rlang
@@ -16,8 +16,8 @@ BugReports: https://framagit.org/nicolas-robette/descriptio/-/issues
 LazyData: true
 RoxygenNote: 7.2.1
 NeedsCompilation: no
-Packaged: 2025-05-21 13:42:31 UTC; nicolas
+Packaged: 2025-05-29 10:13:21 UTC; nicolas
 Author: Nicolas Robette [aut, cre]
 Maintainer: Nicolas Robette <nicolas.robette@uvsq.fr>
 Repository: CRAN
-Date/Publication: 2025-05-21 14:20:02 UTC
+Date/Publication: 2025-05-29 10:50:01 UTC

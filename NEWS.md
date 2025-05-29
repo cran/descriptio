@@ -1,4 +1,12 @@
-# descriptio 1.4
+# descriptio 1.4.1
+
+## bug fix
+
+* `regtab()` : several bug fixes 
+
+
+
+# descriptio 1.4 [CRAN]
 
 ## new functions
 
